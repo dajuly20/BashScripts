@@ -1,0 +1,79 @@
+
+ █     █▓█████ ██▓    ▄████▄  ▒█████  ███▄ ▄███▓█████    ▄▄▄█████▓▒█████     
+▓█░ █ ░█▓█   ▀▓██▒   ▒██▀ ▀█ ▒██▒  ██▓██▒▀█▀ ██▓█   ▀    ▓  ██▒ ▓▒██▒  ██▒   
+▒█░ █ ░█▒███  ▒██░   ▒▓█    ▄▒██░  ██▓██    ▓██▒███      ▒ ▓██░ ▒▒██░  ██▒   
+░█░ █ ░█▒▓█  ▄▒██░   ▒▓▓▄ ▄██▒██   ██▒██    ▒██▒▓█  ▄    ░ ▓██▓ ░▒██   ██░   
+░░██▒██▓░▒████░██████▒ ▓███▀ ░ ████▓▒▒██▒   ░██░▒████▒     ▒██▒ ░░ ████▓▒░   
+░ ▓░▒ ▒ ░░ ▒░ ░ ▒░▓  ░ ░▒ ▒  ░ ▒░▒░▒░░ ▒░   ░  ░░ ▒░ ░     ▒ ░░  ░ ▒░▒░▒░    
+  ▒ ░ ░  ░ ░  ░ ░ ▒  ░ ░  ▒    ░ ▒ ▒░░  ░      ░░ ░  ░       ░     ░ ▒ ▒░    
+  ░   ░    ░    ░ ░  ░       ░ ░ ░ ▒ ░      ░     ░        ░     ░ ░ ░ ▒     
+    ░      ░  ░   ░  ░ ░         ░ ░        ░     ░  ░               ░ ░     
+                     ░                                                       
+ ▒█████  █     ████▄    █ ▄████▄  ██▓    ▒█████  █    ██▓█████▄              
+▒██▒  ██▓█░ █ ░███ ▀█   █▒██▀ ▀█ ▓██▒   ▒██▒  ██▒██  ▓██▒██▀ ██▌             
+▒██░  ██▒█░ █ ░▓██  ▀█ ██▒▓█    ▄▒██░   ▒██░  ██▓██  ▒██░██   █▌             
+▒██   ██░█░ █ ░▓██▒  ▐▌██▒▓▓▄ ▄██▒██░   ▒██   ██▓▓█  ░██░▓█▄   ▌             
+░ ████▓▒░░██▒██▒██░   ▓██▒ ▓███▀ ░██████░ ████▓▒▒▒█████▓░▒████▓     ██▓      
+░ ▒░▒░▒░░ ▓░▒ ▒░ ▒░   ▒ ▒░ ░▒ ▒  ░ ▒░▓  ░ ▒░▒░▒░░▒▓▒ ▒ ▒ ▒▒▓  ▒     ▒▓▒      
+  ░ ▒ ▒░  ▒ ░ ░░ ░░   ░ ▒░ ░  ▒  ░ ░ ▒  ░ ░ ▒ ▒░░░▒░ ░ ░ ░ ▒  ▒     ░▒       
+░ ░ ░ ▒   ░   ░   ░   ░ ░░         ░ ░  ░ ░ ░ ▒  ░░░ ░ ░ ░ ░  ░     ░        
+    ░ ░     ░           ░░ ░         ░  ░   ░ ░    ░       ░         ░       
+                         ░                               ░           ░       
+ █     █░██▓▄████▄  ██░ ██▓█████            ▓█████ █    ██                   
+▓█░ █ ░█▓██▒██▀ ▀█ ▓██░ ██▓█   ▀            ▓█   ▀ ██  ▓██▒                  
+▒█░ █ ░█▒██▒▓█    ▄▒██▀▀██▒███              ▒███  ▓██  ▒██░                  
+░█░ █ ░█░██▒▓▓▄ ▄██░▓█ ░██▒▓█  ▄            ▒▓█  ▄▓▓█  ░██░                  
+░░██▒██▓░██▒ ▓███▀ ░▓█▒░██░▒████▒    ██▓    ░▒████▒▒█████▓                   
+░ ▓░▒ ▒ ░▓ ░ ░▒ ▒  ░▒ ░░▒░░░ ▒░ ░    ▒▓▒    ░░ ▒░ ░▒▓▒ ▒ ▒                   
+  ▒ ░ ░  ▒ ░ ░  ▒   ▒ ░▒░ ░░ ░  ░    ░▒      ░ ░  ░░▒░ ░ ░                   
+  ░   ░  ▒ ░        ░  ░░ ░  ░       ░         ░   ░░░ ░ ░                   
+    ░    ░ ░ ░      ░  ░  ░  ░  ░     ░        ░  ░  ░                       
+           ░                          ░                                      
+
+To Remember: 
+Keyboard Shortcuts:
+CTRL + D - DIE !! (Log out terminal)
+CTRL + L - Leeren (Clear terminal)
+CTRL + E - Ende   (go to end of line)
+CTRL + A - Anfang (go to begin of line)
+
+CTRL + U - Ußschnieede [dialect]  (Cut word before cursor)
+CTRL + K - Kommendes Ußschnieede  (Cut right from cursor)
+CTRL + W - WortUßschniede         (Cut Wort left from Cursor)
+CTRL + Y - Yasses!                (PASTE after CTRL U, K, W)
+
+Tmux shortcuts:  (panes)
+CTRL + B => %  - Split 0|0 
+CTRL + B => "  - Split 0/0
+CTRL + B => O  - Tab through panes
+CTRL + D         Exit Pane (normal Bash Shortcur) 
+
+		 (attaching / detaching)
+CTRL + B => $  - name Session!!
+CTRL + B => D  - DETACH !!! 
+CTRL + B => S  - SWITCH session
+
+tmux ls        - ListSessions
+tmux attach -t nameOfSession - attach to session)
+
+CTRL + B => :    tmux command prompt
+
+
+Programs:
+tmux  - (terminal Multiplier)
+watch - (e.g. watch -n2 df -h Executes the command df -h every 2 seconds)  
+occ   - owncloud commandline interface (by alias in bashrc)
+occ files:scan --all - rescan files for every user
+htop  - graphical top
+fdupes - find DoubleFiles
+rdfind -makehardlinks true Folder/ => Replace double files with hardlinks
+hexcurse - hex editor on commandline.
+tail - f -- live file tail..
+fdisk -l -- See Disk sizes.
+sudo lsblk -o NAME,LABEL -- Partitionen anzeigen
+sudo blkid -o list       -- dito
+dpkg --get-selections | grep -v deinstall  -- See all installed Packages
+iptrag -- show network traffic
+occ maintenance:mode --on -- Maintainance mode on!
+curl ipinfo.io/218.65.30.92 -- IP info on commandline.
+(sudo) netstat -lp -- Show processes according to a specific port. (Sudo to identify not selfowned processes 
