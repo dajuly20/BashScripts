@@ -1,0 +1,11 @@
+fbox="https://fritz.box:444" 
+USER="Leander" 
+PASSWD="#16.09.2017" 
+SID=$(curl --insecure -s $fbox/login_sid.lua | sed 's/.*<SID>\(.*\)<\/SID>.*/\1/') 
+challenge=$(curl --insecure -s $fbox/login_sid.lua | grep -o "<Challenge>[a-z0-9]\{8\}" | cut -d'>' -f 2) 
+CPSTR="$challenge-$PASSWD" 
+hash=`echo -n $CPSTR | iconv -f ISO8859-1 -t UTF-16LE | md5sum -b | awk '{print substr($0,1,32)}'` 
+RESPONSE="$challenge-$hash" 
+POSTDATA="?username=$USER&response=$RESPONSE" 
+SID=$(curl --insecure --data "$POSTDATA" -s $fbox/login_sid.lua | sed 's/.*<SID>\(.*\)<\/SID>.*/\1/')
+echo Status:$SID
