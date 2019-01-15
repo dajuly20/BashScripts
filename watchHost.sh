@@ -4,7 +4,7 @@
 #CONFIGURATION
 
 #IP of host
-WATCH_IP="192.168.188.22"
+WATCH_IP="$1"
 #path to logfile
 LOGFILE="/home/julian/watchGarten.log"
 #duration between pings
