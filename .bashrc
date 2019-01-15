@@ -26,18 +26,76 @@ export HISTCONTROL=ignoredups
   LIGHT_CYAN="\[\033[1;36m\]"
   LIGHT_GREY="\[\033[0;37m\]"
   WHITE="\[\033[1;37m\]"
- COLOR_NONE="\[\e[0m\]"
+  COLOR_NONE="\[\e[0m\]"
 
  function is_svn_repository {
-  svn info > /dev/null 2> /dev/null 
-ERR=$?
-if [ $ERR -ne 0 ];then
-    return 1
-    else
-    return 0
-fi
+	svn info > /dev/null 2> /dev/null 
+	ERR=$?
+	if [ $ERR -ne 0 ];then
+	    return 1
+	else
+	    return 0
+	fi
+  }
+
+function umountAllSmb {
+	for D in `mount -lt cifs | sed 's/.*on \(\/.\+\) type.*/\1/'`; do 
+	echo -n "UNMOUNTING $D..."; sudo umount $D; echo " [DONE]"; done;
+}
+
+
+function pingable {
+	
+INSTD=`which fping`
+	[ -z "$INSTD" ] && echo "Install fping (apt-get install fping)!"
+	[ -z $1 ] && echo "IP not specified!" 
+
+	IP=$1
+	fping -c1 -t300 $IP 2>/dev/null 1>/dev/null
+	if [ "$?" = 0 ]
+	then
+		echo "Found Host $1"
+	 	return 0
+	else
+		echo "Host $1 not found"
+		return 1
+
+	fi
+}
+
+# e.g. mtnetshare Server2 yourNetShare
+# makes folders for shares under ~/smbShares/HOST/share
+function mtnetshare {
+        HOSTNAME=$1
+        SHARENAME=$2
+        RP=`realpath ~`
+        FOLDER="$RP/smbShares/$HOSTNAME/$SHARENAME"
+        USER=`whoami`
+        USERID=`id -u`
+        GID=`id -g`
+        pingable $HOSTNAME
+        if [ $? -eq 0 ]
+        then
+                echo "Ja"
+                echo "$FOLDER"
+                mkdir -p "$FOLDER"
+                sudo mount -t cifs //$HOSTNAME/$SHARENAME/ $FOLDER -o user=$USER,uid=$USERID,gid=$GID
+        else
+                echo "Nein"
+        fi
+}
+
+function mtnetshares {
+
+#unmounts all shares
+umountAllSmb
+# Mounts shares only if host is avaliable
+mtnetshare ControlPi2 julhome
+mtnetshare ControlPi3 julhome
+mtnetshare ControlPi3fixed julhome
 
 }
+
 
 function parse_svn_dirty (){
 	local status=$(svn status)
@@ -318,6 +376,8 @@ alias fgrep='fgrep --color=tty'
 alias egrep='egrep --color=tty'
 #alias make='colormake'
 alias ll='ls -la'
+alias llm='ll --block-size=M'
+alias llg='ll --block-size=G'
 alias cp='cp -v'
 alias mspaint='pinta'
 alias paint='pinta'
