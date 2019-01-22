@@ -33,7 +33,6 @@ function findStr () {
 grep -rnw $1 -e $2
 }
 
-echo "Test"
 
  function is_svn_repository {
 	svn info > /dev/null 2> /dev/null 
