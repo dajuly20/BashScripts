@@ -13,11 +13,13 @@ function connectRdp() {
 #	USER="julian.wiche"
 #	DOMAIN="intern"
 #	FLAGSIZE=""
+	LNXUSER=`whoami`
 	SERVER=$1
 	GATEWAY=$2
 	USER=$3
 	DOMAIN=$4
-	
+        DRIVENAME="RDP-SHARED-HOME-$LNXUSER,/home/$LNXUSER"
+	echo $DRIVENAME
 	echo -n "Password for $USER:"
 	read -s  PASS
 	echo
@@ -27,14 +29,16 @@ function connectRdp() {
 		then
 		FLAGSIZE="/multimon"
 		else
-		FLAGSIZE="/f"
+		xfreerdp /monitor-list
+		read -p "Monitors? (e.g. 0,1,2)" MONITORS	
+		FLAGSIZE="/f /monitors:$MONITORS /multimon"
 		fi
 	  fi
 	
-	echo "Connection to srv $SERVER with gateway $GATEWAY user $USER @ $DOMAIN "
+	echo "Connection to srv $SERVER with gateway $GATEWAY user $USER @ $DOMAIN $FLAGSIZE "
 	echo "PRESS CTRL + ALT + ENTER to exit fullscreen!"
 
-	xfreerdp /v:$SERVER /g:$GATEWAY /u:$USER /d:$DOMAIN /p:$PASS $FLAGSIZE
+	xfreerdp +clipboard /v:$SERVER /g:$GATEWAY /u:$USER /d:$DOMAIN /p:$PASS $FLAGSIZE /sound /drive:auto,* /drive:$DRIVENAME &
 }
 
 

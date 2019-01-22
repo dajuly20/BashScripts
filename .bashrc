@@ -28,6 +28,12 @@ export HISTCONTROL=ignoredups
   WHITE="\[\033[1;37m\]"
   COLOR_NONE="\[\e[0m\]"
 
+#Searches for string in directory (findStr . "bla") 
+function findStr () {
+grep -rnw $1 -e $2
+}
+
+
  function is_svn_repository {
 	svn info > /dev/null 2> /dev/null 
 	ERR=$?
