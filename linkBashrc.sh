@@ -7,6 +7,14 @@ function ask_yes_or_no() {
     esac
 }
 
+echo "Diff for .bash_profile: (If empty no difference)"
+git diff ../.bash_profile .bash_profile
+echo 
+echo 
+echo "Diff for .bashrc: (If empty no difference)"
+git diff ../.bashrc .bashrc
+echo 
+
 if [[ "yes" == $(ask_yes_or_no "REMOVE ~/.bashrc and ~/.bash_profile and replace by link to files in this repo?") ]]
          then
 
