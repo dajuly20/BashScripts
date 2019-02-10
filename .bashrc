@@ -384,6 +384,7 @@ alias egrep='egrep --color=tty'
 alias ll='ls -la'
 alias llm='ll --block-size=M'
 alias llg='ll --block-size=G'
+alias lln='stat -c "%A %a %n" *'
 alias cp='cp -v'
 alias mspaint='pinta'
 alias paint='pinta'
@@ -484,3 +485,14 @@ export PATH
 
 
 alias occ='sudo -u www-data php /usr/share/owncloud/occ'
+
+if [ -d "/usr/local/gcc-7.2.0/bin" ]; then
+	export PATH=/usr/local/gcc-7.2.0/bin:$PATH
+fi
+
+# Export GCC 8.1 as CC if exist.. 
+if [ -d "/usr/local/gcc-8.1.0/bin" ]; then    
+	export PATH=/usr/local/gcc-8.1.0/bin:$PATH
+	export CC=/usr/local/gcc-8.1.0/bin/gcc-8.1.0
+	export CXX=/usr/local/gcc-8.1.0/bin/g++-8.1.0    
+fi
