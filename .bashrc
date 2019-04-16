@@ -389,7 +389,7 @@ alias cp='cp -v'
 alias mspaint='pinta'
 alias paint='pinta'
 alias google-chrome='chromium'
-
+alias ddstatus='watch -n5 "sudo kill -USR1 $(pgrep ^dd)"'
 alias firefoxY='~/bashTools/openProxy9001.sh'
 
 alias suspend='systemctl suspend'
