@@ -30,6 +30,10 @@ export HISTCONTROL=ignoredups
 
 #Searches for string in directory (findStr . "bla") 
 function findStr () {
+if [ -z $1 ]; then
+echo "usage: ${FUNCNAME[0]} ./dir \"Needle\""
+return 1
+fi
 grep -rnw $1 -e $2
 }
 
@@ -384,7 +388,6 @@ alias egrep='egrep --color=tty'
 alias ll='ls -la'
 alias llm='ll --block-size=M'
 alias llg='ll --block-size=G'
-alias lln='stat -c "%A %a %n" *'
 alias cp='cp -v'
 alias mspaint='pinta'
 alias paint='pinta'
@@ -394,8 +397,10 @@ alias firefoxY='~/bashTools/openProxy9001.sh'
 
 alias suspend='systemctl suspend'
 alias ruhezustand='systemctl suspend'
+alias calc="gnome-calculator"
 
 bind 'set completion-ignore-case on'
+
 
 netinfo ()
 {
@@ -486,13 +491,6 @@ export PATH
 
 alias occ='sudo -u www-data php /usr/share/owncloud/occ'
 
-if [ -d "/usr/local/gcc-7.2.0/bin" ]; then
-	export PATH=/usr/local/gcc-7.2.0/bin:$PATH
-fi
-
-# Export GCC 8.1 as CC if exist.. 
-if [ -d "/usr/local/gcc-8.1.0/bin" ]; then    
-	export PATH=/usr/local/gcc-8.1.0/bin:$PATH
-	export CC=/usr/local/gcc-8.1.0/bin/gcc-8.1.0
-	export CXX=/usr/local/gcc-8.1.0/bin/g++-8.1.0    
-fi
+function largestPakets () {
+dpkg-query -Wf 'Size\t\n' | sort -n
+}
